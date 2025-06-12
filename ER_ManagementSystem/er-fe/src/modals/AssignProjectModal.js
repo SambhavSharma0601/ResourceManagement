@@ -45,12 +45,12 @@ const AssignProjectModal = ({ onClose }) => {
     const fetchData = async () => {
       try {
         const projectRes = await axios.get(
-          "http://localhost:5000/api/projects"
+          "https://resourcemanagement-4gp2.onrender.com/api/projects"
         );
         setProjects(projectRes.data);
 
         const engineerRes = await axios.get(
-          "http://localhost:5000/api/engineers"
+          "https://resourcemanagement-4gp2.onrender.com/api/engineers"
         );
         const unassignedEngineers = engineerRes.data.filter(
           (eng) => !eng.project_assigned || eng.project_assigned === "None"
@@ -77,7 +77,7 @@ const AssignProjectModal = ({ onClose }) => {
   const handleAssign = async () => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/assign/${selectedEngineer._id}`,
+        `https://resourcemanagement-4gp2.onrender.com/api/assign/${selectedEngineer._id}`,
         {
           projectId: selectedProject._id,
         }
