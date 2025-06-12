@@ -28,7 +28,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchEngineers = async () => {
       try {
-        const res = await axios.get("http://localhost:5000/api/engineers");
+        const res = await axios.get("https://resourcemanagement-4gp2.onrender.com/api/engineers");
         setEngineers(res.data);
 
         // If engineer, fetch own data
@@ -49,7 +49,7 @@ const Dashboard = () => {
 
           // Fetch Assignments
           const assignRes = await axios.get(
-            `http://localhost:5000/api/assignments/by-engineer/${currentEngineer._id}`
+            `https://resourcemanagement-4gp2.onrender.com/api/assignments/by-engineer/${currentEngineer._id}`
           );
           setAssignments(assignRes.data);
         }
@@ -85,7 +85,7 @@ const Dashboard = () => {
     };
   
     try {
-      await axios.put(`http://localhost:5000/api/assignments/${assignmentId}`, {
+      await axios.put(`https://resourcemanagement-4gp2.onrender.com/api/assignments/${assignmentId}`, {
         ...statusMap[status],
       });
   
