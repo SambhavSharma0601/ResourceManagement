@@ -51,7 +51,7 @@ const AssignmentModal = ({ onClose }) => {
   useEffect(() => {
     const fetchEngineers = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/engineers');
+        const res = await axios.get('https://resourcemanagement-4gp2.onrender.com/api/engineers');
         setEngineers(res.data);
       } catch (error) {
         console.error('Error fetching engineers:', error);
@@ -65,7 +65,7 @@ const AssignmentModal = ({ onClose }) => {
     if (!selectedEngineer || !assignmentName.trim()) return;
 
     try {
-      await axios.post('http://localhost:5000/api/assignments/assign', {
+      await axios.post('https://resourcemanagement-4gp2.onrender.com/api/assignments/assign', {
         engineerId: selectedEngineer,
         assignment_name: assignmentName,
       });
