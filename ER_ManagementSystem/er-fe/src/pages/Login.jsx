@@ -94,6 +94,7 @@ function Login() {
               <p className="small mb-0">
                 For demo purpose use : hannah.backend@company.com , password hannah123 (engineer user)
                 <br></br>manager@company.com , password : manager123 (admin/manager role user)
+NOTE: If you didn't get redirect after login, manually change the url to /dashboard  --  THIS IS netlify issue or browser specific
               </p>
             </div>
           </div>
