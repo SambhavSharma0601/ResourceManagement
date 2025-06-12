@@ -11,7 +11,7 @@ export const useLoginHook = () => {
     setError(null);
 
     try {
-      const response = await axios.post('http://localhost:5000/api/login', formData);
+      const response = await axios.post('https://resourcemanagement-4gp2.onrender.com/api/login', formData);
       // console.log(response.data);
       localStorage.setItem('currentUser',JSON.stringify(response.data.user));
       localStorage.setItem('token', response.data.token);
