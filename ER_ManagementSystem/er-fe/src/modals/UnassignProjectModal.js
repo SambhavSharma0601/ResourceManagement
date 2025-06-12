@@ -42,7 +42,7 @@ const UnassignProjectModal = ({ onClose }) => {
   useEffect(() => {
     const fetchEngineers = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/engineers');
+        const res = await axios.get('https://resourcemanagement-4gp2.onrender.com/api/engineers');
         const filtered = res.data.filter((eng) => eng.project_assigned); // Only show engineers with projects
         setEngineers(filtered);
       } catch (err) {
@@ -57,7 +57,7 @@ const UnassignProjectModal = ({ onClose }) => {
     if (!selectedEngineerId) return;
 
     try {
-      await axios.put(`http://localhost:5000/api/unassign/${selectedEngineerId}`);
+      await axios.put(`https://resourcemanagement-4gp2.onrender.com/api/unassign/${selectedEngineerId}`);
       alert('Project unassigned successfully!');
       onClose();
     } catch (err) {
