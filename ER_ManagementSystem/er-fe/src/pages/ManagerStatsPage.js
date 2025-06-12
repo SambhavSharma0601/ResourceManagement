@@ -16,7 +16,7 @@ const ManagerStatsPage = () => {
   useEffect(() => {
     const fetchStats = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/stats/overview');
+        const res = await axios.get('https://resourcemanagement-4gp2.onrender.com/api/stats/overview');
         setStats(res.data);
       } catch (err) {
         console.error('Error fetching stats:', err);
